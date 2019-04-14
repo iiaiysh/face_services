@@ -40,7 +40,7 @@ def facial_result():
         file_upload = {f'{postname}': ('filename', open(file_path, 'rb'), 'image/jpeg')}
 
         try:
-            res = requests.post(f'http://0.0.0.0:{port}/{entrypoint}', files=file_upload)
+            res = requests.post(f'http://0.0.0.0:{port}/{entrypoint}', files=file_upload, timeout=5)
 
             json_data = json.loads(res.text)
 
